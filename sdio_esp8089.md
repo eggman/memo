@@ -12,6 +12,21 @@
 * block size        : 512
 
 # SIP
+
+## format
+
+### SIP_HDR_MIN
+* u8  fc[0]         : bit 3-0 type (0:CTRL, 1:DATA, 2: DATA_MPDU) and bit 7-4 index
+* u8  fc[1]         : event ID  or flags
+* u16 len
+
+### SIP_HDR
+* u8  fc[0]         : bit 3-0 type (0:CTRL, 1:DATA, 2: DATA_MPDU) and bit 7-4 index
+* u8  fc[1]         : event ID or flags
+* u16 len
+* union u           : recycled_credits or struct sip_tx_info
+* u32 seq           : sequence number
+
 ## command
 *        SIP_CMD_GET_VER = 0,
 *        SIP_CMD_WRITE_MEMORY,//1 ROM code
