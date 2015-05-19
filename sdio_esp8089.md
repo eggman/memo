@@ -4,8 +4,10 @@
 * MANUFACTURER_CODE : 0x6666
 * MANUFACTURER_ID   : 0x1111
 * SDIO clock        :
+
 ## Function 0
 * block size        :
+
 ## Function 1
 * block size        : 512
 
