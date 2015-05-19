@@ -1,8 +1,16 @@
-# SDIO ov ESP8089
-
-# SDIO Function 1
+# SDIO on ESP8089
 
 # command
+
+# download firmware
+
+* select firmware ( 1st init or 2nd )
+* check magic code of firmware header
+* get number of blocks
+* get load_addr
+* loop
+** write data at load_addr
+* send boot command (SIP_CMD_BOOTUP)
 
 # init procedure
 
