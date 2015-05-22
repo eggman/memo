@@ -12,3 +12,4 @@ SDIO protocol of MT5931
 #References
 * http://www.mediatek.com/jp/products/connectivity/wifi/mobile-handset/abcd/
 * https://labs.mediatek.com/fileMedia/download/849a1f28-c8ca-44be-8af8-090480b578e1
+* https://github.com/Galland/MTK5931
