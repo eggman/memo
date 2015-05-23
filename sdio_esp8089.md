@@ -28,13 +28,11 @@
 * u32 seq           : sequence number
 
 ## command
-*        SIP_CMD_GET_VER = 0,
 *        SIP_CMD_WRITE_MEMORY,//1 ROM code
 *        SIP_CMD_READ_MEMORY,//2
 *        SIP_CMD_WRITE_REG,//3 ROM code
 *        SIP_CMD_READ_REG,     //4
 *        SIP_CMD_BOOTUP,//5 ROM code
-*        SIP_CMD_COPYBACK,//6
 *        SIP_CMD_INIT,          //7
 *        SIP_CMD_SCAN,//8
 *        SIP_CMD_SETKEY,//9
@@ -43,19 +41,14 @@
 *        SIP_CMD_LOOPBACK,//12  ROM code
 *        SIP_CMD_SET_WMM_PARAM,
 *        SIP_CMD_AMPDU_ACTION,
-*        SIP_CMD_HB_REQ, //15
-*        SIP_CMD_RESET_MAC, //16
-*        SIP_CMD_PRE_DOWN,  //17
 *        SIP_CMD_SLEEP,        /* for sleep testing */
 *        SIP_CMD_WAKEUP,       /* for sleep testing */
 *        SIP_CMD_DEBUG,          /* for general testing */
-*        SIP_CMD_GET_FW_VER,  /* get fw rev. */
 *        SIP_CMD_SETVIF,
 *        SIP_CMD_SETSTA,
 *        SIP_CMD_PS,
 *        SIP_CMD_ATE,
 *        SIP_CMD_SUSPEND,
-*        SIP_CMD_MAX,
 
 ## event
 *        SIP_EVT_TARGET_ON = 0,    //
@@ -84,12 +77,19 @@
 *        SIP_EVT_MAX
 
 # download firmware
+
+## address , length
+* 1st : 0xe9030000 , 0x00001040
+* 2nd : 0xe9030000 , 0x00001040
+
+## sequence
 * select firmware ( 1st init or 2nd )
 * check magic code of firmware header
 * get number of blocks
 * get load_addr
 * loop
 ** write data at load_addr
+** SIP_CMD_WRITE_MEMORY
 * send boot command (SIP_CMD_BOOTUP)
 
 # init procedure
