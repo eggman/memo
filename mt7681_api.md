@@ -1,6 +1,7 @@
 # MT7681 API
 
 # API
+## from document
 * spi_flash_read(addr, data, len)
 * spi_flash_read_m2(addr, data, len)
 * spi_flash_write_func(addr, data, len)
@@ -48,6 +49,25 @@
 * store_ap_cfg()
 * load_usr_cfg()
 * reset_usr_cfg()
+## ap_pub.h
+* int32 iot_ap_init(void)
+* void iot_ap_startup(void)
+* void iot_ap_pmk_set(void)
+* void iot_apcfg_preinit(void)
+* void iot_apcfg_update(uint8 *pSSID, uint8 AuthMode, uint8 *pPassword, uint8 Channel)
+* void set_entry_phycfg(MAC_TABLE_ENTRY *pEntry)
+* void store_ap_cfg(void)
+* bool reset_ap_cfg(void)
+* int32 AsicSetPreTbttInt(bool enable)
+* void AsicEnableBssSync(void)
+* void APMakeBssBeacon(void)
+* void APUpdateBeaconFrame(void)
+* void APSendNullFrame(IN puchar pAddr, IN uint8 pwrMgmt)
+* void iot_ap_mactbl_mgmt()
+* MAC_TABLE_ENTRY *MacTableLookup(puchar pAddr)
+* bool MacTableDeleteEntry(IN uint16 wcid)
+* MAC_TABLE_ENTRY *MacTableInsertEntry(IN  puchar    pAddr,IN bool CleanAll)
+void MacTableReset(void)
 
 # References
 * http://labs.mediatek.com/site/global/developer_tools/mediatek_7681/documentation/index.gsp
