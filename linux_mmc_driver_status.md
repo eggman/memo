@@ -1,6 +1,8 @@
 # Linux mmc driver status
 
-# Linux 4.1
+# Linux kernel changelog
+
+## Linux 4.1
 * atmel-mci
 * dw_mmc
 * omap_hsmmc
@@ -14,7 +16,8 @@
 * sh_mmcif
 * sunxi
 
-# Linux 4.0
+## Linux 4.0
+* https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=aa7ed01f93ff7e149cad46f13f66b269d59c9bc0
 * dw_mmc
 * moxart
 * omap_hsmmc
@@ -26,7 +29,7 @@
 * sunxi
 * rtsx
 
-# Linux 3.19
+## Linux 3.19
 * atmel-mci
 * dw_mmc
 * mvsdio
@@ -58,6 +61,15 @@
 * 2008-06-15 atmel-mci https://github.com/torvalds/linux/commit/7d2be0749a59096a334c94dc48f43294193cb8ed
 * 2009-01-24 omap_hsmmc https://github.com/torvalds/linux/commit/a45c6cb816474cefe56059fce422a9bdcd77e0dc
 * 2006-04-03 imxmmc https://github.com/torvalds/linux/commit/56ca904053ab14ba4067a72b69a5edf246771209
+
+# driver capability
+
+## rtsi-usb
+* mmc->f_min = 250000;
+* mmc->f_max = 208000000;
+* mmc->ocr_avail = MMC_VDD_32_33 | MMC_VDD_33_34 | MMC_VDD_165_195;
+* mmc->caps = MMC_CAP_4_BIT_DATA | MMC_CAP_SD_HIGHSPEED | MMC_CAP_MMC_HIGHSPEED | MMC_CAP_BUS_WIDTH_TEST | MMC_CAP_UHS_SDR12 | MMC_CAP_UHS_SDR25 | MMC_CAP_UHS_SDR50 | MMC_CAP_NEEDS_POLL;
+* mmc->caps2 = MMC_CAP2_NO_PRESCAN_POWERUP | MMC_CAP2_FULL_PWR_CYCLE;
 
 # IP
 * Arasan
