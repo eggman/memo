@@ -1,6 +1,6 @@
 # SDIO protocol of RTL8189ES
 
-* SDIO protocol is based on USB.
+* realtek's SDIO protocol is based on USB.
 
 # SDIO
 * SDIO Version : 1.1 / 2.0 / 3.0
