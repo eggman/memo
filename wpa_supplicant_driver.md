@@ -8,6 +8,11 @@
 ## bsd
 * .name                   = "bsd",
 * .desc                   = "BSD 802.11 support",
+* drv->capa.key_mgmt = WPA_DRIVER_CAPA_KEY_MGMT_WPA | WPA_DRIVER_CAPA_KEY_MGMT_WPA_PSK | WPA_DRIVER_CAPA_KEY_MGMT_WPA2 | WPA_DRIVER_CAPA_KEY_MGMT_WPA2_PSK
+* drv->capa.enc = WPA_DRIVER_CAPA_ENC_WEP40 | WPA_DRIVER_CAPA_ENC_WEP104 | WPA_DRIVER_CAPA_ENC_TKIP | WPA_DRIVER_CAPA_ENC_CCMP
+* drv->capa.flags |= WPA_DRIVER_FLAGS_AP
+* drv->capa.max_scan_ssids = IEEE80211_IOC_SCAN_MAX_SSID
+* drv->capa.auth = WPA_DRIVER_AUTH_OPEN | WPA_DRIVER_AUTH_SHARED | WPA_DRIVER_AUTH_LEAP
 
 ## hostap
 * .name = "hostap",
@@ -23,11 +28,35 @@
 * wpa_driver_ndis_ops.name = ndis_drv_name;
 * wpa_driver_ndis_ops.desc = ndis_drv_desc;
 
-** nl80211
+## nl80211
 * .name = "nl80211",
 * .desc = "Linux nl80211/cfg80211",
+* drv->capa.key_mgmt = WPA_DRIVER_CAPA_KEY_MGMT_WPA | WPA_DRIVER_CAPA_KEY_MGMT_WPA_PSK | WPA_DRIVER_CAPA_KEY_MGMT_WPA2 | WPA_DRIVER_CAPA_KEY_MGMT_WPA2_PSK drv->capa.enc = WPA_DRIVER_CAPA_ENC_WEP40 | WPA_DRIVER_CAPA_ENC_WEP104 | WPA_DRIVER_CAPA_ENC_TKIP | WPA_DRIVER_CAPA_ENC_CCMP
+* drv->capa.auth = WPA_DRIVER_AUTH_OPEN | WPA_DRIVER_AUTH_SHARED | WPA_DRIVER_AUTH_LEAP
+* drv->capa.flags |= WPA_DRIVER_FLAGS_SANE_ERROR_CODES WPA_DRIVER_FLAGS_SET_KEYS_AFTER_ASSOC_DONE | WPA_DRIVER_FLAGS_EAPOL_TX_STATUS | WPA_DRIVER_FLAGS_DEAUTH_TX_STATUS | WPA_DRIVER_FLAGS_AP_MLME
+* capa->flags |= WPA_DRIVER_FLAGS_AP;
+* capa->flags |= WPA_DRIVER_FLAGS_OFFCHANNEL_TX;
+* capa->flags |= WPA_DRIVER_FLAGS_BSS_SELECTION;
+* capa->flags |= WPA_DRIVER_FLAGS_AP_UAPSD;
+* capa->flags |= WPA_DRIVER_FLAGS_SME;
+* capa->flags |= WPA_DRIVER_FLAGS_P2P_CAPABLE;
+* capa->flags |= WPA_DRIVER_FLAGS_P2P_CONCURRENT;
+* capa->flags |= WPA_DRIVER_FLAGS_P2P_MGMT_AND_NON_P2P;
+* capa->flags |= WPA_DRIVER_FLAGS_TDLS_SUPPORT;
+* capa->flags |= WPA_DRIVER_FLAGS_INACTIVITY_TIMER;
+* capa->flags |= WPA_DRIVER_FLAGS_SAE;
+* capa->flags |= WPA_DRIVER_FLAGS_OBSS_SCAN;
+* capa->flags |= WPA_DRIVER_FLAGS_PROBE_RESP_OFFLOAD;
+* drv->capa.flags |= WPA_DRIVER_FLAGS_SANE_ERROR_CODES;
+* drv->capa.flags |= WPA_DRIVER_FLAGS_SET_KEYS_AFTER_ASSOC_DONE;
+* drv->capa.flags |= WPA_DRIVER_FLAGS_EAPOL_TX_STATUS;
+* drv->capa.flags |= WPA_DRIVER_FLAGS_DEAUTH_TX_STATUS;
+* drv->capa.flags |= WPA_DRIVER_FLAGS_AP_MLME;
+* drv->capa.flags |= WPA_DRIVER_FLAGS_P2P_CONCURRENT;
+* drv->capa.flags |= WPA_DRIVER_FLAGS_P2P_MGMT_AND_NON_P2P;
 
-** none
+
+## none
 * .name = "none",
 * .desc = "no driver (RADIUS server/WPS ER)",
 
@@ -38,18 +67,30 @@
 ## roboswitch
 * .name = "roboswitch",
 * .desc = "wpa_supplicant roboswitch driver",
+* capa->flags = WPA_DRIVER_FLAGS_WIRED
 
 ## test
 * "test",
 * "wpa_supplicant test driver",
+* capa->key_mgmt = WPA_DRIVER_CAPA_KEY_MGMT_WPA | WPA_DRIVER_CAPA_KEY_MGMT_WPA2 | WPA_DRIVER_CAPA_KEY_MGMT_WPA_PSK | WPA_DRIVER_CAPA_KEY_MGMT_WPA2_PSK | WPA_DRIVER_CAPA_KEY_MGMT_WPA_NONE | WPA_DRIVER_CAPA_KEY_MGMT_FT | WPA_DRIVER_CAPA_KEY_MGMT_FT_PSK
+* capa->enc = WPA_DRIVER_CAPA_ENC_WEP40 | WPA_DRIVER_CAPA_ENC_WEP104 | WPA_DRIVER_CAPA_ENC_TKIP | WPA_DRIVER_CAPA_ENC_CCMP
+* capa->auth = WPA_DRIVER_AUTH_OPEN | WPA_DRIVER_AUTH_SHARED | WPA_DRIVER_AUTH_LEAP
+* capa->flags WPA_DRIVER_FLAGS_P2P_MGMT | WPA_DRIVER_FLAGS_AP | WPA_DRIVER_FLAGS_P2P_CONCURRENT | WPA_DRIVER_FLAGS_P2P_DEDICATED_INTERFACE | WPA_DRIVER_FLAGS_P2P_CAPABLE
+* capa->max_scan_ssids = 2
+* capa->max_remain_on_chan = 60000
 
 ## wext
 * .name = "wext",
 * .desc = "Linux wireless extensions (generic)",
+* capa.key_mgmt : WPA_DRIVER_CAPA_KEY_MGMT_WPA | WPA_DRIVER_CAPA_KEY_MGMT_WPA_PSK | WPA_DRIVER_CAPA_KEY_MGMT_WPA2 | WPA_DRIVER_CAPA_KEY_MGMT_WPA2_PSK
+* capa.enc : WPA_DRIVER_CAPA_ENC_WEP40 |WPA_DRIVER_CAPA_ENC_WEP104 | WPA_DRIVER_CAPA_ENC_WEP128; | WPA_DRIVER_CAPA_ENC_TKIP | WPA_DRIVER_CAPA_ENC_CCMP | WPA_DRIVER_FLAGS_4WAY_HANDSHAKE
+* capa.auth : WPA_DRIVER_AUTH_OPEN | |WPA_DRIVER_AUTH_SHARED | WPA_DRIVER_AUTH_LEAP
+* capa.mas_scan_ssids : 1
 
 ## wired
 * .name = "wired",
 * .desc = "Wired Ethernet driver",
+* capa->flags = WPA_DRIVER_FLAGS_WIRED
 
 
 # data
@@ -170,10 +211,24 @@
 * int (*switch_channel)(void *priv, unsigned int freq);
 
 
+## wrapper
+* select driver and set pointer to wpa_s->driver.
+* wpa_drv_init() -> wpa_s->driver->init()
 
 
 
+# API sequences
 
+## init
+* wpa_s->drv_priv = wpa_drv_init(wpa_s, wpa_s->ifname)
+* wpa_drv_set_param(wpa_s, wpa_s->conf->driver_param)
+* ifname = wpa_drv_get_ifname(wpa_s)
+* wpa_s->hw.modes = wpa_drv_get_hw_feature_data(wpa_s, &wpa_s->hw.num_modes, &wpa_s->hw.flags)
+* wpa_drv_get_capa(wpa_s, &capa)
+
+## scan
+
+## STA WPA2
 
 # files
 
