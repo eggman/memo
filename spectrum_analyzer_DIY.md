@@ -12,6 +12,12 @@
 * 128 channels
 * 8bit RSSI
 
+## AR928X
+* 2.4GHz, 5,8GHz
+* OFDM subcarrier (56 carreies in 20MHz mode, 114 carries in 40MHz mode)
+* 8bit magnitude (|i|+|q|)
+* https://wiki.freebsd.org/dev/ath_hal%284%29/SpectralScan
+
 ## ATR2406
 * 2.4GHz
 * 95 channels
