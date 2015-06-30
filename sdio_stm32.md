@@ -1,6 +1,6 @@
 # SD host of STM32
 
-* STM32 use ARM PrimeCell Multimedia Card Interface (PL180)
+* STM32 use ARM PrimeCell Multimedia Card Interface (PL180).
 
 # Feature
 
@@ -26,6 +26,31 @@
 * 0x3C SDIO_MASK
 * 0x48 SDIO_FIFOCNT
 * 0x80 SDIO_FIFO
+
+## FIFO
+
+* 2 FIFO (for TX, for RX)
+* 32 bit width
+* 16 words 
+
+# Software
+
+## CMD0
+
+## CMD2
+
+## CMD3
+
+## CMD5
+
+## CMD7
+
+## CMD8
+
+## CMD52
+
+## CMD53
+
 
 # PL180
 
@@ -65,5 +90,7 @@
  * http://infocenter.arm.com/help/topic/com.arm.doc.ddi0172a/DDI0172.pdf
 * Linux driver
  * https://github.com/EmcraftSystems/linux-emcraft/blob/master/drivers/mmc/host/mmci.c
-* nemusan
+* nemui san
  * http://nemuisan.blog.bai.ne.jp/?eid=213760
+* RT-Thread  stm32 with marvel 8686
+ * https://github.com/RT-Thread/realboard-stm32f4
