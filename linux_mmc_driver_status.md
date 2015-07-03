@@ -2,6 +2,14 @@
 
 # Linux kernel changelog
 
+## Linux 4.2
+* https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=a57f14bac07f63118d947f53976d7f15c04b062a
+* mtk-sd
+* sdhci
+* dw_mmc
+* tmio
+* sh_mmcif
+
 ## Linux 4.1
 * atmel-mci
 * dw_mmc
@@ -41,6 +49,7 @@
 * toshsd
 
 # driver 1st commit at mainline 
+* 2015-06-xx mtk-sd https://github.com/torvalds/linux/commit/208489032bdd8d4a7de50f3057c175058f271956
 * 2015-03-23 sdhci-iproc https://github.com/torvalds/linux/commit/b580c52d58d92f1e054c8b4515cf0fa617a77a26
 * 2015-02-20 sdhci_f_sdh30 https://github.com/torvalds/linux/commit/87a507459f49862772127acf051609b37363dd16
 * 2014-06-10 sdhci_st https://github.com/torvalds/linux/commit/f52d9c4f459bdab128b1b033f26fb52d3418e0f5
@@ -64,12 +73,19 @@
 
 # driver capability
 
+## atmel-mci
+
 ## rtsi-usb
 * mmc->f_min = 250000;
 * mmc->f_max = 208000000;
 * mmc->ocr_avail = MMC_VDD_32_33 | MMC_VDD_33_34 | MMC_VDD_165_195;
 * mmc->caps = MMC_CAP_4_BIT_DATA | MMC_CAP_SD_HIGHSPEED | MMC_CAP_MMC_HIGHSPEED | MMC_CAP_BUS_WIDTH_TEST | MMC_CAP_UHS_SDR12 | MMC_CAP_UHS_SDR25 | MMC_CAP_UHS_SDR50 | MMC_CAP_NEEDS_POLL;
 * mmc->caps2 = MMC_CAP2_NO_PRESCAN_POWERUP | MMC_CAP2_FULL_PWR_CYCLE;
+
+## sunxi-mmc
+* mmc->f_min              =   400000;
+* mmc->f_max              = 50000000;
+* mmc->caps              |= MMC_CAP_MMC_HIGHSPEED | MMC_CAP_SD_HIGHSPEED |MMC_CAP_ERASE;
 
 # IP
 * Arasan
