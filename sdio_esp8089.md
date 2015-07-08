@@ -132,26 +132,33 @@
 *        SIP_EVT_TARGET_ON = 0,    //
 *        SIP_EVT_BOOTUP,//1 in ROM code
 *        SIP_EVT_COPYBACK,//2
+ * copy back data
 *        SIP_EVT_SCAN_RESULT,  //3
+ * report data
 *        SIP_EVT_TX_STATUS,//4
 *        SIP_EVT_CREDIT_RPT,     //5, in ROM code
 *        SIP_EVT_ERROR,//6
 *        SIP_EVT_LOOPBACK,//7, in ROM code
+ * loop back data
 *        SIP_EVT_SNPRINTF_TO_HOST, //8  in ROM code
+ * snprintf data
 *        SIP_EVT_HB_ACK,  //9
 *        SIP_EVT_RESET_MAC_ACK, //10
 *        SIP_EVT_WAKEUP,//11        /* for sleep testing */
 *        SIP_EVT_DEBUG,//12          /* for general testing */
 *        SIP_EVT_PRINT_TO_HOST, //13
 *        SIP_EVT_TRC_AMPDU, //14
+ * trc ampdu data
 *        SIP_EVT_ROC,              //15
 *        SIP_EVT_RESETTING,
 *        SIP_EVT_ATE,
 *        SIP_EVT_EP,
+ * ep
 *        SIP_EVT_INIT_EP,
 *        SIP_EVT_SLEEP,
 *        SIP_EVT_TXIDLE,
 *        SIP_EVT_NOISEFLOOR,
+ * noise floor data
 *        SIP_EVT_MAX
 
 # download firmware
@@ -180,17 +187,33 @@
 
 ## cmd
 * TEST_CMD_ECHO
+ * esp_test_echo()
 * TEST_CMD_ASK
+ * esp_test_ask()
 * TEST_CMD_SLEEP
+ * esp_test_sleep
+ * sleep_mode
+ * sleep_tm_ms
+ * wakeup_tm_ms
+ * sleep_times
 * TEST_CMD_LOOPBACK
+ * use in event handler
 * TEST_CMD_TX
+ * esp_test_tx()
 * TEST_CMD_RX
+ * not use
 * TEST_CMD_DEBUG
+ * use in eveent handler
 * TEST_CMD_SDIO_WR
+ * esp_test_sdio_wr()
 * TEST_CMD_SDIO_RD
+ * esp_test_sdio_rd()
 * TEST_CMD_ATE
+ * esp_test_ate()
 * TEST_CMD_SDIOTEST
+ * esp_test_sdiotest()
 * TEST_CMD_SDIOSPEED
+ * esp_test_sdiospeed()
 
 
 ## address
