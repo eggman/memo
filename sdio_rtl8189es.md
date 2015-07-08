@@ -16,15 +16,39 @@
 
 ## register index id
 * #define SDIO_REG_TX_CTRL			0x0000 // SDIO Tx Control
+ * 0x00 : disable maybe
+ * 0x02 : enable
+
 * #define SDIO_REG_HIMR				0x0014 // SDIO Host Interrupt Mask
+ * EnableInterrupt8188ESdio()
+ * DisableInterrupt8188ESdio()
+ * 0:RX_REQUEST 1:AVAL 2:TXERR 3:RXERR 4:TXFOVW 5:RXFOVW 7:TXBCNOK
+ * 16:BCNERLY_INT 17:C2HCMD 18:CPWM1 19:CPWM2 20:HSISR_IND 21:GTINIT3_IND 22:GTINT4_IND 23:PSTIMEOUT 24:OCPINT 25:ATIMEND 26:ATIMEND_E 27:CTWEND
+
 * #define SDIO_REG_HISR				0x0018 // SDIO Host Interrupt Service Routine
+ * ReadInterrupt8188ESdio()
+ * ClearInterrupt8723ASdio()
+
 * #define SDIO_REG_HCPWM				0x0019 // HCI Current Power Mode
 * #define SDIO_REG_RX0_REQ_LEN			0x001C // RXDMA Request Length
+ * sd_int_dpc()
+ * length is little endian unsigned 16bit 
 * #define SDIO_REG_FREE_TXPG			0x0020 // Free Tx Buffer Page
+ * HalQueryTxBufferStatus8189ESdio()
+ * free page of HIQ
+ * free page of MIDQ
+ * free page of LOWQ
+ * free page of PUBQ
+
 * #define SDIO_REG_HCPWM1				0x0024 // HCI Current Power Mode 1
+ * sd_int_dpc()
+ * BIT4: indicate FW entering 32k mode (may be sleep mode)
+ * rtw_set_rpwm()
+
 * #define SDIO_REG_HCPWM2				0x0026 // HCI Current Power Mode 2
 * #define SDIO_REG_HTSFR_INFO			0x0030 // HTSF Informaion
 * #define SDIO_REG_HRPWM1				0x0080 // HCI Request Power Mode 1
+ * rtl8188es_hal_init()
 * #define SDIO_REG_HRPWM2				0x0082 // HCI Request Power Mode 2
 * #define SDIO_REG_HPS_CLKR			0x0084 // HCI Power Save Clock
 * #define SDIO_REG_HSUS_CTRL			0x0086 // SDIO HCI Suspend Control
