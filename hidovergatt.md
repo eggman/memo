@@ -6,6 +6,7 @@
 * Report Host is GAP Central role.
 
 # Service
+```
 * Device Information Service
 * Battry Service
 * HID_SERVICE
@@ -21,6 +22,7 @@
 ** HID_OUTPUT_REPORT : read write write_cmd
 ** HID_CONTROL_POINT : write_cmd
 ** HID_PROTOCOL_MODE : read write_cmd
+```
 
 # Test
 ## PTS
@@ -61,6 +63,22 @@
 * TC_HGNF_RH_BV_01_I
 * TC_HGNF_RH_BI_01_I
 * TC_HGNF_RH_BI_01_I
+
+# sample code
+## Bluedroid
+* https://android.googlesource.com/platform/external/bluetooth/bluedroid/+/master/bta/hh/bta_hh_le.c
+## BlueZ
+* http://git.kernel.org/cgit/bluetooth/bluez.git/tree/profiles/input/hog.c 
+## CSR CSR101x
+* https://github.com/NemProjects/CSR1010-MMA9550/tree/master/apps/keyboard
+## Nordic nRF51
+* https://github.com/roboTJ101/nRF51_SDK_8.1.0/tree/master/examples/ble_peripheral/ble_app_hids_keyboard
+## NXP QN902x
+* https://bitbucket.org/T-Firefly/fireble/src/3c2db2d397b91252569efd4ce07ab7300feac4f5/BLE/src/app/hogpd/?at=master
+* https://bitbucket.org/T-Firefly/fireble/src/3c2db2d397b91252569efd4ce07ab7300feac4f5/BLE/prj_hids/src/?at=master
+## TI CC254x
+* https://github.com/killets/ThermometerBLE/tree/master/BLE-CC254x-1.4.1.43908_copy/Projects/ble/HIDAdvRemote
+* https://github.com/killets/ThermometerBLE/tree/master/BLE-CC254x-1.4.1.43908_copy/Projects/ble/HIDAdvRemoteDongle
 
 # Reference
 * https://developer.bluetooth.org/TechnologyOverview/Pages/HOGP.aspx
